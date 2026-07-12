@@ -1,0 +1,1 @@
+[Visualize Data With a Bar Chart](https://codepen.io/Chrisimana/pen/bNpMwvb)
