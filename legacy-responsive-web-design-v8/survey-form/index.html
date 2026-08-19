@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey Kepuasan Pelanggan</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 id="title">Survey Kepuasan Pelanggan</h1>
+      <p id="description">Kami menghargai pendapat Anda. Silakan isi survei ini untuk membantu kami meningkatkan layanan.</p>
+    </header>
+
+    <form id="survey-form">
+      <!-- Data Diri -->
+      <div class="form-group">
+        <label id="name-label" for="name">Nama Lengkap</label>
+        <input type="text" id="name" name="name" class="form-control" placeholder="Masukkan nama Anda" required>
+      </div>
+
+      <div class="form-group">
+        <label id="email-label" for="email">Alamat Email</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Masukkan email Anda" required>
+      </div>
+
+      <div class="form-group">
+        <label id="number-label" for="number">Usia <span class="hint">(opsional)</span></label>
+        <input type="number" id="number" name="age" class="form-control" placeholder="Usia" min="10" max="99">
+      </div>
+
+      <!-- Pilihan -->
+      <div class="form-group">
+        <label for="dropdown">Pekerjaan Saat Ini</label>
+        <select id="dropdown" name="job" class="form-control" required>
+          <option value="" disabled selected>Pilih pekerjaan Anda</option>
+          <option value="student">Pelajar/Mahasiswa</option>
+          <option value="employee">Karyawan Swasta</option>
+          <option value="entrepreneur">Wirausaha</option>
+          <option value="freelancer">Freelancer</option>
+          <option value="other">Lainnya</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <p>Seberapa puaskah Anda dengan layanan kami?</p>
+        <label><input type="radio" name="satisfaction" value="sangat-puas" class="input-radio" checked> Sangat Puas</label>
+        <label><input type="radio" name="satisfaction" value="puas" class="input-radio"> Puas</label>
+        <label><input type="radio" name="satisfaction" value="cukup" class="input-radio"> Cukup</label>
+        <label><input type="radio" name="satisfaction" value="kurang" class="input-radio"> Kurang Puas</label>
+      </div>
+
+      <div class="form-group">
+        <p>Fitur apa yang paling Anda sukai?</p>
+        <select id="most-like" name="favorite" class="form-control" required>
+          <option value="" disabled selected>Pilih fitur favorit</option>
+          <option value="kecepatan">Kecepatan Layanan</option>
+          <option value="harga">Harga Terjangkau</option>
+          <option value="kualitas">Kualitas Produk</option>
+          <option value="pelayanan">Pelayanan Ramah</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <p>Aspek apa yang perlu kami tingkatkan? <span class="hint">(centang semua yang sesuai)</span></p>
+        <label><input type="checkbox" name="improve" value="kecepatan" class="input-checkbox"> Kecepatan Layanan</label>
+        <label><input type="checkbox" name="improve" value="harga" class="input-checkbox"> Harga</label>
+        <label><input type="checkbox" name="improve" value="kualitas" class="input-checkbox"> Kualitas Produk</label>
+        <label><input type="checkbox" name="improve" value="pelayanan" class="input-checkbox"> Pelayanan</label>
+        <label><input type="checkbox" name="improve" value="variasi" class="input-checkbox"> Variasi Produk</label>
+        <label><input type="checkbox" name="improve" value="lokasi" class="input-checkbox"> Lokasi</label>
+      </div>
+
+      <div class="form-group">
+        <label for="comments">Kritik & Saran</label>
+        <textarea id="comments" name="comments" class="input-textarea" placeholder="Tulis saran Anda di sini..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" id="submit" class="submit-button">Kirim Survei</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

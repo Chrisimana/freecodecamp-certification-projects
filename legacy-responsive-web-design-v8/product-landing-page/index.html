@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kopi Nusantara - Specialty Coffee</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div id="page-wrapper">
+    <!-- HEADER -->
+    <header id="header">
+      <div class="logo">
+        <img id="header-img" src="https://cdn-icons-png.flaticon.com/512/924/924514.png" alt="Kopi Nusantara Logo">
+        <span class="brand">Kopi Nusantara</span>
+      </div>
+      <nav id="nav-bar">
+        <ul>
+          <li><a class="nav-link" href="#features">Keunggulan</a></li>
+          <li><a class="nav-link" href="#how-it-works">Proses</a></li>
+          <li><a class="nav-link" href="#pricing">Pilihan</a></li>
+          <li><a class="nav-link" href="#testimonials">Testimoni</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-content">
+        <h2>Rasakan Keaslian Kopi Nusantara</h2>
+        <p>Dari biji pilihan ke cangkir Anda — kopi spesialitas dari berbagai daerah di Indonesia.</p>
+        <form id="form" action="https://www.freecodecamp.com/email-submit">
+          <input id="email" type="email" name="email" placeholder="Masukkan alamat email Anda" required>
+          <input id="submit" type="submit" value="Dapatkan Penawaran" class="btn">
+        </form>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features">
+      <div class="container">
+        <div class="feature-grid">
+          <div class="feature-item">
+            <div class="icon"><i class="fas fa-seedling"></i></div>
+            <div class="desc">
+              <h3>Biji Pilihan</h3>
+              <p>Kami memilih biji kopi terbaik dari petani lokal di seluruh Nusantara dengan kualitas premium.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="icon"><i class="fas fa-mug-hot"></i></div>
+            <div class="desc">
+              <h3>Panggang Ahli</h3>
+              <p>Dipanggang dengan teknik khusus oleh barista berpengalaman untuk menghasilkan cita rasa optimal.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="icon"><i class="fas fa-truck-fast"></i></div>
+            <div class="desc">
+              <h3>Pengiriman Cepat</h3>
+              <p>Kami mengirim kopi segar ke seluruh Indonesia dengan kemasan vakum untuk menjaga kesegaran.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="icon"><i class="fas fa-certificate"></i></div>
+            <div class="desc">
+              <h3>Kualitas Terjamin</h3>
+              <p>Setiap batch kopi diuji kualitasnya oleh tim cupping expert kami sebelum dikirim ke Anda.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS / VIDEO -->
+    <section id="how-it-works">
+      <div class="container">
+        <h2 class="section-title">Bagaimana Kopi Kami Dihasilkan</h2>
+        <div class="video-wrapper">
+          <iframe id="video" src="https://www.youtube-nocookie.com/embed/9r5pRj74-sQ?rel=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+      <div class="container">
+        <h2 class="section-title">Apa Kata Mereka</h2>
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <p>"Kopi yang luar biasa! Aroma dan rasanya benar-benar autentik. Saya sudah langganan setiap bulan."</p>
+            <span class="author">— Andi, Jakarta</span>
+          </div>
+          <div class="testimonial-card">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <p>"Kopi Nusantara adalah yang terbaik yang pernah saya coba. Pengiriman cepat dan kemasan aman."</p>
+            <span class="author">— Sari, Bandung</span>
+          </div>
+          <div class="testimonial-card">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <p>"Saya suka variasi rasa dari setiap daerah. Kopi ini benar-benar membawa cita rasa Indonesia."</p>
+            <span class="author">— Budi, Surabaya</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <div class="container">
+        <h2 class="section-title">Pilihan Paket Kopi</h2>
+        <div class="pricing-grid">
+          <div class="product">
+            <div class="level">Paket Starter</div>
+            <h2>Rp150.000</h2>
+            <ul>
+              <li><i class="fas fa-check"></i> 250g kopi single origin</li>
+              <li><i class="fas fa-check"></i> Pilihan 3 varian rasa</li>
+              <li><i class="fas fa-check"></i> Kemasan vakum</li>
+              <li><i class="fas fa-check"></i> Panduan seduh</li>
+            </ul>
+            <button class="btn">Pilih Paket</button>
+          </div>
+
+          <div class="product featured">
+            <div class="level">Paket Premium</div>
+            <h2>Rp350.000</h2>
+            <ul>
+              <li><i class="fas fa-check"></i> 500g kopi speciality grade</li>
+              <li><i class="fas fa-check"></i> Pilihan 5 varian rasa</li>
+              <li><i class="fas fa-check"></i> Kemasan vakum + box kayu</li>
+              <li><i class="fas fa-check"></i> Buku panduan & alat seduh</li>
+            </ul>
+            <button class="btn">Pilih Paket</button>
+          </div>
+
+          <div class="product">
+            <div class="level">Paket Box</div>
+            <h2>Rp550.000</h2>
+            <ul>
+              <li><i class="fas fa-check"></i> 1000g kopi premium blend</li>
+              <li><i class="fas fa-check"></i> 7 varian dari 7 daerah</li>
+              <li><i class="fas fa-check"></i> Kemasan gift box eksklusif</li>
+              <li><i class="fas fa-check"></i> Gratis ongkir se-Indonesia</li>
+            </ul>
+            <button class="btn">Pilih Paket</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#">Kebijakan Privasi</a>
+          <a href="#">Syarat & Ketentuan</a>
+          <a href="#">Hubungi Kami</a>
+          <a href="#">Tentang Kami</a>
+        </div>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+        <p>&copy; 2025 Kopi Nusantara — Specialty Coffee From Indonesia</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

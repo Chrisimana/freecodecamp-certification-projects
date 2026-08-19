@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dokumentasi CSS Flexbox</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav id="navbar">
+    <header>CSS Flexbox</header>
+    <ul>
+      <li><a class="nav-link" href="#Pengantar_Flexbox">Pengantar Flexbox</a></li>
+      <li><a class="nav-link" href="#Konsep_Dasar">Konsep Dasar</a></li>
+      <li><a class="nav-link" href="#Flex_Container">Flex Container</a></li>
+      <li><a class="nav-link" href="#Flex_Item">Flex Item</a></li>
+      <li><a class="nav-link" href="#flex-direction">flex-direction</a></li>
+      <li><a class="nav-link" href="#flex-wrap">flex-wrap</a></li>
+      <li><a class="nav-link" href="#justify-content">justify-content</a></li>
+      <li><a class="nav-link" href="#align-items">align-items</a></li>
+      <li><a class="nav-link" href="#align-content">align-content</a></li>
+      <li><a class="nav-link" href="#gap">gap</a></li>
+      <li><a class="nav-link" href="#order">order</a></li>
+      <li><a class="nav-link" href="#flex-grow">flex-grow</a></li>
+      <li><a class="nav-link" href="#flex-shrink">flex-shrink</a></li>
+      <li><a class="nav-link" href="#flex-basis">flex-basis</a></li>
+      <li><a class="nav-link" href="#Referensi">Referensi</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-doc">
+    <section class="main-section" id="Pengantar_Flexbox">
+      <header>Pengantar Flexbox</header>
+      <article>
+        <p>Flexbox (Flexible Box Layout) adalah model tata letak CSS yang dirancang untuk mengatur elemen dalam satu dimensi — baik sebagai baris atau kolom. Flexbox memberikan kemampuan untuk mengatur ruang dan penjajaran item secara efisien.</p>
+        <p>Dengan flexbox, kita bisa dengan mudah membuat layout yang responsif tanpa harus menggunakan float atau positioning yang rumit.</p>
+        <p>Model ini sangat berguna untuk:</p>
+        <ul>
+          <li>Membuat navigasi menu yang fleksibel</li>
+          <li>Mengatur elemen secara vertikal dan horizontal</li>
+          <li>Membuat layout card yang rapi</li>
+          <li>Menjaga konsistensi jarak antar elemen</li>
+        </ul>
+        <p>Flexbox bekerja pada hubungan parent-child, di mana kontainer flex mengontrol anak-anaknya (flex items).</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="Konsep_Dasar">
+      <header>Konsep Dasar</header>
+      <article>
+        <p>Ada dua komponen utama dalam flexbox:</p>
+        <ul>
+          <li><strong>Flex Container</strong> — elemen induk yang dideklarasikan dengan <code>display: flex</code></li>
+          <li><strong>Flex Items</strong> — elemen anak di dalam flex container</li>
+        </ul>
+        <p>Flexbox memiliki dua sumbu utama:</p>
+        <ul>
+          <li><strong>Main Axis</strong> — sumbu utama sesuai arah <code>flex-direction</code></li>
+          <li><strong>Cross Axis</strong> — sumbu tegak lurus terhadap main axis</li>
+        </ul>
+        <code>.container {
+  display: flex;
+}</code>
+        <p>Dengan mendeklarasikan <code>display: flex</code>, elemen anak otomatis menjadi flex items.</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="Flex_Container">
+      <header>Flex Container</header>
+      <article>
+        <p>Flex container adalah elemen yang memiliki properti <code>display: flex</code> atau <code>display: inline-flex</code>. Properti ini mengubah elemen menjadi konteks flex untuk anak-anaknya.</p>
+        <p>Contoh penggunaan flex container:</p>
+        <code>.container {
+  display: flex;
+  background: #f0f0f0;
+  padding: 20px;
+}</code>
+        <p>Properti yang berlaku pada flex container:</p>
+        <ul>
+          <li><code>flex-direction</code> — arah sumbu utama</li>
+          <li><code>flex-wrap</code> — apakah item membungkus</li>
+          <li><code>justify-content</code> — penjajaran di sumbu utama</li>
+          <li><code>align-items</code> — penjajaran di sumbu silang</li>
+          <li><code>align-content</code> — penjajaran multiple baris</li>
+          <li><code>gap</code> — jarak antar item</li>
+        </ul>
+        <p>Ketika flex container dibuat, semua anak langsung menjadi flex items.</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="Flex_Item">
+      <header>Flex Item</header>
+      <article>
+        <p>Flex items adalah elemen anak langsung dari flex container. Mereka secara otomatis menjadi bagian dari konteks flex.</p>
+        <p>Properti yang berlaku pada flex items:</p>
+        <ul>
+          <li><code>order</code> — mengatur urutan tampilan</li>
+          <li><code>flex-grow</code> — kemampuan item untuk membesar</li>
+          <li><code>flex-shrink</code> — kemampuan item untuk menyusut</li>
+          <li><code>flex-basis</code> — ukuran awal item</li>
+          <li><code>align-self</code> — penjajaran individual item</li>
+        </ul>
+        <code>.item {
+  flex: 1;
+  padding: 10px;
+  background: #4a90d9;
+}</code>
+        <p>Setiap flex item dapat memiliki properti yang berbeda, memberikan fleksibilitas tinggi.</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="flex-direction">
+      <header>flex-direction</header>
+      <article>
+        <p>Properti <code>flex-direction</code> menentukan arah sumbu utama flex container. Nilai yang tersedia:</p>
+        <ul>
+          <li><strong>row</strong> (default) — dari kiri ke kanan</li>
+          <li><strong>row-reverse</strong> — dari kanan ke kiri</li>
+          <li><strong>column</strong> — dari atas ke bawah</li>
+          <li><strong>column-reverse</strong> — dari bawah ke atas</li>
+        </ul>
+        <p>Contoh penggunaan:</p>
+        <code>.container {
+  display: flex;
+  flex-direction: row-reverse;
+}</code>
+        <p>Dengan <code>flex-direction: column</code>, main axis berubah menjadi vertikal, mempengaruhi properti lain seperti <code>justify-content</code>.</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="flex-wrap">
+      <header>flex-wrap</header>
+      <article>
+        <p>Properti <code>flex-wrap</code> mengontrol apakah flex items akan membungkus ke baris berikutnya ketika ruang tidak cukup.</p>
+        <p>Nilai yang tersedia:</p>
+        <ul>
+          <li><strong>nowrap</strong> (default) — semua item dalam satu baris</li>
+          <li><strong>wrap</strong> — item membungkus ke baris berikutnya</li>
+          <li><strong>wrap-reverse</strong> — membungkus ke arah berlawanan</li>
+        </ul>
+        <code>.container {
+  display: flex;
+  flex-wrap: wrap;
+}</code>
+        <p>Kombinasi <code>flex-direction</code> dan <code>flex-wrap</code> dapat disingkat dengan <code>flex-flow</code>.</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="justify-content">
+      <header>justify-content</header>
+      <article>
+        <p>Properti <code>justify-content</code> mengatur penjajaran flex items di sepanjang sumbu utama.</p>
+        <p>Nilai yang tersedia:</p>
+        <ul>
+          <li><strong>flex-start</strong> (default) — di awal sumbu</li>
+          <li><strong>flex-end</strong> — di akhir sumbu</li>
+          <li><strong>center</strong> — di tengah</li>
+          <li><strong>space-between</strong> — jarak rata, item di ujung</li>
+          <li><strong>space-around</strong> — jarak rata di sekitar item</li>
+          <li><strong>space-evenly</strong> — jarak merata termasuk ujung</li>
+        </ul>
+        <code>.container {
+  display: flex;
+  justify-content: center;
+}</code>
+        <p>Properti ini sangat berguna untuk membuat layout yang rapi dan seimbang.</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="align-items">
+      <header>align-items</header>
+      <article>
+        <p>Properti <code>align-items</code> mengatur penjajaran flex items di sepanjang sumbu silang.</p>
+        <p>Nilai yang tersedia:</p>
+        <ul>
+          <li><strong>stretch</strong> (default) — meregang mengisi ruang</li>
+          <li><strong>flex-start</strong> — di awal sumbu silang</li>
+          <li><strong>flex-end</strong> — di akhir sumbu silang</li>
+          <li><strong>center</strong> — di tengah sumbu silang</li>
+          <li><strong>baseline</strong> — sejajar dengan baseline teks</li>
+        </ul>
+        <code>.container {
+  display: flex;
+  align-items: center;
+}</code>
+        <p><code>align-items</code> mempengaruhi semua item sekaligus, berbeda dengan <code>align-self</code> yang individual.</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="align-content">
+      <header>align-content</header>
+      <article>
+        <p>Properti <code>align-content</code> mengatur penjajaran baris-baris flex items ketika ada lebih dari satu baris (saat <code>flex-wrap: wrap</code>).</p>
+        <p>Nilai yang tersedia:</p>
+        <ul>
+          <li><strong>stretch</strong> (default) — baris meregang</li>
+          <li><strong>flex-start</strong> — baris di awal</li>
+          <li><strong>flex-end</strong> — baris di akhir</li>
+          <li><strong>center</strong> — baris di tengah</li>
+          <li><strong>space-between</strong> — jarak rata antar baris</li>
+          <li><strong>space-around</strong> — jarak rata di sekitar baris</li>
+        </ul>
+        <code>.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}</code>
+        <p>Properti ini mirip dengan <code>justify-content</code> tapi bekerja pada cross axis.</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="gap">
+      <header>gap</header>
+      <article>
+        <p>Properti <code>gap</code> digunakan untuk mengatur jarak antar flex items, baik secara horizontal maupun vertikal.</p>
+        <p>Format penulisan:</p>
+        <ul>
+          <li><code>gap: 20px</code> — jarak 20px untuk semua arah</li>
+          <li><code>gap: 20px 10px</code> — 20px vertikal, 10px horizontal</li>
+        </ul>
+        <p>Sub-properti:</p>
+        <ul>
+          <li><code>row-gap</code> — jarak antar baris</li>
+          <li><code>column-gap</code> — jarak antar kolom</li>
+        </ul>
+        <code>.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}</code>
+        <p><code>gap</code> menggantikan penggunaan margin pada flex items yang lebih merepotkan.</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="order">
+      <header>order</header>
+      <article>
+        <p>Properti <code>order</code> memungkinkan kita mengatur urutan tampilan flex items tanpa mengubah struktur HTML.</p>
+        <p>Nilai default adalah 0. Item dengan nilai lebih kecil akan muncul lebih dulu.</p>
+        <code>.item-pertama {
+  order: 2;
+}
+
+.item-kedua {
+  order: 1; /* akan muncul sebelum item-pertama */
+}</code>
+        <p>Properti ini sangat berguna untuk layout responsif di mana urutan tampilan berbeda pada perangkat yang berbeda.</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="flex-grow">
+      <header>flex-grow</header>
+      <article>
+        <p>Properti <code>flex-grow</code> menentukan kemampuan sebuah flex item untuk membesar jika ada ruang kosong di dalam container.</p>
+        <p>Nilai default adalah 0, yang berarti item tidak akan membesar. Nilai positif (1, 2, dst) menunjukkan proporsi pembesaran.</p>
+        <code>.item-utama {
+  flex-grow: 2; /* akan membesar 2x lipat dari item dengan flex-grow: 1 */
+}
+
+.item-biasa {
+  flex-grow: 1;
+}</code>
+        <p>Semakin besar nilai <code>flex-grow</code>, semakin banyak ruang kosong yang akan diambil oleh item tersebut.</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="flex-shrink">
+      <header>flex-shrink</header>
+      <article>
+        <p>Properti <code>flex-shrink</code> menentukan kemampuan sebuah flex item untuk menyusut jika ruang dalam container terbatas.</p>
+        <p>Nilai default adalah 1, yang berarti item dapat menyusut. Nilai 0 mencegah item untuk menyusut.</p>
+        <code>.item-tetap {
+  flex-shrink: 0; /* tidak akan menyusut */
+}
+
+.item-lentur {
+  flex-shrink: 1; /* akan menyusut sesuai kebutuhan */
+}</code>
+        <p>Properti ini berguna untuk menjaga elemen tertentu tetap pada ukuran minimumnya.</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="flex-basis">
+      <header>flex-basis</header>
+      <article>
+        <p>Properti <code>flex-basis</code> menentukan ukuran awal sebuah flex item sebelum ruang dibagi oleh <code>flex-grow</code> atau <code>flex-shrink</code>.</p>
+        <p>Nilai default adalah <code>auto</code>, yang berarti menggunakan ukuran dari properti <code>width</code> atau <code>height</code>.</p>
+        <code>.item {
+  flex-basis: 200px;
+}</code>
+        <p>Ketiga properti <code>flex-grow</code>, <code>flex-shrink</code>, dan <code>flex-basis</code> dapat disingkat dengan <code>flex</code>.</p>
+        <code>.item {
+  flex: 1 0 200px; /* grow: 1, shrink: 0, basis: 200px */
+}</code>
+      </article>
+    </section>
+
+    <section class="main-section" id="Referensi">
+      <header>Referensi</header>
+      <article>
+        <p>Dokumentasi ini disusun berdasarkan sumber-sumber berikut:</p>
+        <ul>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout" target="_blank">MDN Web Docs - CSS Flexible Box Layout</a></li>
+          <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">CSS-Tricks - A Complete Guide to Flexbox</a></li>
+          <li><a href="https://www.w3.org/TR/css-flexbox-1/" target="_blank">W3C - CSS Flexible Box Layout Module Level 1</a></li>
+        </ul>
+        <p>Semua konten dalam halaman ini dibuat untuk tujuan pembelajaran.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
